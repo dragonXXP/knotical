@@ -1,0 +1,373 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: transparent;
+    text-align: center;
+    position: fixed;
+    width: 20%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 40%;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.838);
+}
+
+header img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+#fpv-video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#drone-video {
+    border-radius: 20px;
+}
+
+#fpv-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.image {
+    padding: 30px;
+    width: 56%; /* Set a fixed width for the image container */
+    margin: auto; /* Center the image container */
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.image img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+p, ul {
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+.feature, .testimonial {
+    margin-bottom: 1.5em;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.btn {
+    background-color: #00509e;
+    color: white;
+    padding: 0.8em 1.2em;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #003366;
+}
+
+footer {
+    background-color: #ffffff;
+    color: #0066FF;
+    padding: 2em 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 540;
+}
+
+#footer-logo {
+    width: 320px;
+    height: auto;
+    margin: 5px;
+}
+
+.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 40vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+/* Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    header {
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    header img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content {
+        padding: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p, ul {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 0.7em 1em;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        width: 40%;
+        margin-left: 30%;
+        
+    }
+
+    header img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .waves {
+        height: 100%;
+        width: 110%;
+        /*min-height: 40px;*/
+        margin-bottom: -7%;
+        margin-left: -7%;
+        margin-right: -7%;
+        
+    }
+/*
+    section {
+        padding: 1em;
+    }
+*/
+    .content {
+        padding: 1em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, ul {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 0.5em 0.8em;
+        font-size: 1em;
+    }
+
+    footer {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        width: 50%;
+        margin-left: 25%;
+       
+    }
+
+    header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p, ul {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 0.4em 0.6em;
+        font-size: 0.9em;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+.scroll-container {
+    width: 100%; /* Full width of the parent element */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    
+}
+
+.scroll-content {
+    display: inline-block; /* Prevent content from wrapping */
+    margin: auto;
+    padding: 2em;
+    border-radius: 10px;
+    margin-bottom: 20px;
+   
+    
+}
+
+.scrollimage {
+    padding: 30px;
+    width: 45%; /* Set a fixed width for the image container */
+    margin: auto; /* Center the image container */
+    
+}
+.scrollimage img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin-right: 50px;
+}
+
+#scrolldiv {
+   
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+    
+}
+#dark {
+   
+    position: relative;
+    z-index: 1;
+    background: rgba(12, 14, 37, 0.6);
+    
+    
+}
+.paddingtop{
+    padding-top: 20px;
+}
+
+
